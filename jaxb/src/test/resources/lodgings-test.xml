@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<lodgingDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                  xsi:noNamespaceSchemaLocation="lodging-test.xsd">
+	<id>1</id>
+	<address>Calle torreciudad</address>
+	<city>Barbastro</city>
+	<county>Huesca</county>
+	<state>Aragón</state>
+	<country>Spain</country>
+	<phoneNumber>+34974315856</phoneNumber>
+	<roomDto>
+		<id>1</id>
+		<type>Individual</type>
+		<extras>Personal Sauna</extras>
+	</roomDto>
+</lodgingDto>

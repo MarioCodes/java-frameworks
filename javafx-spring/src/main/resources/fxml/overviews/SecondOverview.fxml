@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="440.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="impl.javafx.controllers.overviews.ControllerOverview">
+   <children>
+      <Button layoutX="354.0" layoutY="392.0" mnemonicParsing="false" onAction="#prepareDashboard" text="To Dashboard" />
+      <Label layoutX="349.0" layoutY="208.0" text="Second Overview" />
+   </children>
+</AnchorPane>

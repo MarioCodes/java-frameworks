@@ -14,6 +14,8 @@
   	<lombok.version>1.16.18</lombok.version>
   	<slf4j.version>1.7.25</slf4j.version>
 	<logback.version>1.2.3</logback.version>
+	<spring.version>5.0.2.RELEASE</spring.version>
+	<spring.data.version>2.0.2.RELEASE</spring.data.version>
 	
   	<!-- Test Dependency Versions -->
   	<junit.version>4.12</junit.version>
@@ -32,28 +34,31 @@
   <dependencyManagement>
   	<dependencies>
   		<!-- Vertx -->
-		<!-- Vertx Core -->
 		<dependency>
 		    <groupId>io.vertx</groupId>
 		    <artifactId>vertx-core</artifactId>
 		    <version>${vertx.version}</version>
 		</dependency>
 	
-		<!-- Vertx Web -->
 		<dependency>
 		  <groupId>io.vertx</groupId>
 		  <artifactId>vertx-web</artifactId>
 		  <version>${vertx.version}</version>
 		</dependency>
 	
-		<!-- Vertx Unit Testing -->
-		<dependency>
-		    <groupId>io.vertx</groupId>
-		    <artifactId>vertx-unit</artifactId>
-		    <version>${vertx.version}</version>
-		    <scope>test</scope>
+		<!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+    	<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>${spring.data.version}</version>
 		</dependency>
-
+        
 		<!-- Logging -->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
@@ -101,6 +106,14 @@
 		    <groupId>org.assertj</groupId>
 		    <artifactId>assertj-core</artifactId>
 		    <version>${assertj.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- Vertx Unit Testing -->
+		<dependency>
+		    <groupId>io.vertx</groupId>
+		    <artifactId>vertx-unit</artifactId>
+		    <version>${vertx.version}</version>
 		    <scope>test</scope>
 		</dependency>
   	</dependencies>

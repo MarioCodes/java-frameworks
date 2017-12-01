@@ -3,7 +3,12 @@ Personal implementations and templates of java frameworks.
 
 ### current:
 * vert-x
-
+  * eventbus examples
+    * string
+    * POJO
+  * web
+    * rest API
+  
 ### to-implement:
 * Spring
 * Maven

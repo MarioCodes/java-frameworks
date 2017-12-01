@@ -3,37 +3,30 @@ package es.msanchez.vertx.starter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import es.msanchez.vertx.config.SpringConfig;
+import es.msanchez.vertx.utilities.SpringRegister;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 
 public class StarterVerticle extends AbstractVerticle {
 
-  protected AnnotationConfigApplicationContext applicationContext;
+	private AnnotationConfigApplicationContext applicationContext;
 
-  @Override
-  public void start(final Future<Void> startFuture) throws Exception {
-    this.initSpringApplicationContext(SpringConfig.class);
+	private SpringRegister register = new SpringRegister();
 
-    //
-    // Here goes our custom code for this application.
-    //
+	@Override
+	public void start(final Future<Void> startFuture) throws Exception {
+		applicationContext = register.initSpringApplicationContext(SpringConfig.class);
 
-    startFuture.complete();
-  }
+		//
+		// Here goes our custom code for this application.
+		//
 
-  @Override
-  public void stop(final Future<Void> stopFuture) throws Exception {
-    this.applicationContext = null;
-    stopFuture.complete();
-  }
+		startFuture.complete();
+	}
 
-  private void initSpringApplicationContext(final Class<?> configClass) {
-    if (this.applicationContext != null)
-      this.applicationContext = null;
-
-    final AnnotationConfigApplicationContext springContext = new AnnotationConfigApplicationContext();
-    springContext.register(configClass);
-    springContext.refresh();
-    this.applicationContext = springContext;
-  }
+	@Override
+	public void stop(final Future<Void> stopFuture) throws Exception {
+		this.applicationContext = null;
+		stopFuture.complete();
+	}
 }

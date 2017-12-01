@@ -7,6 +7,9 @@ Personal implementations and templates of java frameworks.
 ### to-implement:
 * Spring
 * Maven
+* Hibernate
+  * Config w. xml
+  * Config w. only Java annotations
 * [Codearte/catch-exception](https://github.com/Codearte/catch-exception)
 * [Open Pojo](https://github.com/oshoukry/openpojo)
 * JAXB  

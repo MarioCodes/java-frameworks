@@ -4,7 +4,7 @@ Personal implementations and templates of java frameworks.
 ### current:
 * vert-x
   * eventbus examples
-    * string
+    * ~~String~~
     * POJO
   * web
     * rest API

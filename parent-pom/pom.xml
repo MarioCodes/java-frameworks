@@ -46,6 +46,13 @@
 		  <version>${vertx.version}</version>
 		</dependency>
 	
+		<!-- Vertx Hazelcast. It administrates vertx's clusters -->
+		<dependency>
+		    <groupId>io.vertx</groupId>
+		    <artifactId>vertx-hazelcast</artifactId>
+		    <version>${vertx.version}</version>
+		</dependency>
+	
 		<!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>

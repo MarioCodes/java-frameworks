@@ -8,11 +8,10 @@ Personal implementations and templates of java frameworks.
     * ~~POJO~~
     * Move shared code from both examples to a common microservice. Declare it as dependency w. Maven.
   * web
-    * rest API
+    * rest API _(CRUD services)_
   
 ### to-implement:
 * Spring
-* Maven
 * Hibernate
   * Config w. xml
   * Config w. only Java annotations

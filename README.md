@@ -5,7 +5,8 @@ Personal implementations and templates of java frameworks.
 * vert-x
   * eventbus examples
     * ~~String~~
-    * POJO
+    * ~~POJO~~
+    * Move shared code from both examples to a common microservice. Declare it as dependency w. Maven.
   * web
     * rest API
   

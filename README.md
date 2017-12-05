@@ -12,6 +12,7 @@ Personal implementations and templates of java frameworks.
   
 ### to-implement:
 * Spring
+* Liquibase
 * Hibernate
   * Config w. xml
   * Config w. only Java annotations
@@ -22,3 +23,4 @@ Personal implementations and templates of java frameworks.
   * Read an already created file and set a custom element (POJO) parsed in the middle of it. Do so with several iterations.  
     * XML  
     * JSON
+* Docker

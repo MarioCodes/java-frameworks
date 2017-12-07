@@ -12,6 +12,7 @@ Personal implementations and templates of java frameworks.
   
 ### to-implement:
 * Spring
+  * Spring Boot
 * Liquibase
 * Hibernate
   * Config w. xml
@@ -24,3 +25,4 @@ Personal implementations and templates of java frameworks.
     * XML  
     * JSON
 * Docker
+* Wildfly - Swarm

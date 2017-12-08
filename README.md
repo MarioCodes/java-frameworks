@@ -11,6 +11,7 @@ Personal implementations and templates of java frameworks.
     * rest API _(CRUD services)_
   
 ### to-implement:
+* [Jackson](https://github.com/FasterXML/jackson)
 * Spring
   * Spring Boot
 * Liquibase

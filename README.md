@@ -14,6 +14,9 @@ Personal implementations and templates of java frameworks.
 * [Jackson](https://github.com/FasterXML/jackson)
 * Spring
   * Spring Boot
+  * Spring JPA
+    * jparepository
+    * jpaspecificationexecutor
 * Liquibase
 * Hibernate
   * Config w. xml

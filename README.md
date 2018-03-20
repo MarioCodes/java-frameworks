@@ -30,3 +30,4 @@ Personal implementations and templates of java frameworks.
     * JSON
 * Docker
 * Wildfly - Swarm
+* Google's AutoValue

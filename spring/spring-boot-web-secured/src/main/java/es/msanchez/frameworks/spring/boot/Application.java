@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @see "https://spring.io/guides/gs/spring-boot/"
+ * @see "https://spring.io/guides/gs/securing-web/"
  */
 @Slf4j
 @SpringBootApplication

@@ -27,7 +27,6 @@ public class Application {
     return args -> {
       log.info("Beans provided by Spring Boot:");
       final List<String> beanNames = Arrays.asList(context.getBeanDefinitionNames());
-
       beanNames.stream().forEach(bean -> log.debug("Bean name '{}'", bean));
     };
 

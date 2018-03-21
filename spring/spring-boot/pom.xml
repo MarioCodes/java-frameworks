@@ -3,10 +3,9 @@
   <groupId>es.msanchez.frameworks</groupId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-boot-web-app</name>
+  <artifactId>spring-boot-web-app</artifactId>
   
   <properties>
-  	<main-class>es.msanchez.frameworks.spring.boot.Starter</main-class> <!-- Override in every project (Vertx) -->
-  
   	<!-- maven plugins -->
   	<maven-compiler-config.version>1.8</maven-compiler-config.version>
   	<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -127,6 +126,20 @@
   
     <build>
   		<plugins>
+  		    <!-- Solves Manifest not found trouble -->
+	  		<plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <version>${spring-boot.version}</version>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>repackage</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
+        
 		  <!-- Sets the compiler version -->
 		  <plugin>
 	        <groupId>org.apache.maven.plugins</groupId>
@@ -137,35 +150,6 @@
 	          <target>${maven-compiler-config.version}</target>
 	        </configuration>
 	      </plugin>
-	      
-	    	<!-- Fat Jar -->
-		    <plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-shade-plugin</artifactId>
-			  <version>${maven-shade.version}</version>
-			  <executions>
-			    <execution>
-			      <phase>package</phase>
-			      <goals>
-			        <goal>shade</goal>
-			      </goals>
-			      <configuration>
-			        <transformers>
-			          <transformer
-			            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-			            <manifestEntries>
-			              <Main-Class>${main-class}</Main-Class>
-			            </manifestEntries>
-			          </transformer>
-			        </transformers>
-			        <artifactSet/>
-			        <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
-			      </configuration>
-			    </execution>
-			  </executions>
-			</plugin>
   		</plugins>
   </build>
-  
-    <artifactId>spring-boot-web-app</artifactId>
 </project>

@@ -2,10 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>es.msanchez.frameworks</groupId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>spring-properties-read-only</name>
+  <name>spring-boot-web-app</name>
   
   <properties>
-  	<main-class>es.msanchez.frameworks.spring.properties.Starter</main-class> <!-- Override in every project -->
+  	<main-class>es.msanchez.frameworks.spring.boot.Starter</main-class> <!-- Override in every project (Vertx) -->
   
   	<!-- maven plugins -->
   	<maven-compiler-config.version>1.8</maven-compiler-config.version>
@@ -16,6 +16,7 @@
   	<slf4j.version>1.7.25</slf4j.version>
 	<logback.version>1.2.3</logback.version>
   	<spring.version>5.0.3.RELEASE</spring.version>
+  	<spring-boot.version>2.0.0.RELEASE</spring-boot.version>
   	<lombok.version>1.16.20</lombok.version>
   	
   	<!-- test dependencies -->
@@ -54,6 +55,19 @@
     </dependency>
        
  	<!-- Spring -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter</artifactId>
+	    <version>${spring-boot.version}</version>
+	</dependency>
+ 	
+ 	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring-boot.version}</version>
+    </dependency>
+ 	
+ 	
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
@@ -153,5 +167,5 @@
   		</plugins>
   </build>
   
-    <artifactId>spring-properties-read-only</artifactId>
+    <artifactId>spring-boot-web-app</artifactId>
 </project>

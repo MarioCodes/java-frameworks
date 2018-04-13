@@ -1,0 +1,2 @@
+sudo docker build -t customtest1 -f "DockerFile" .    # builds DockerFile into an image
+sudo docker run -p 4000:80 customtest1:latest         # start app 

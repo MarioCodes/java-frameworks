@@ -31,3 +31,7 @@ Personal implementations and templates of java frameworks.
 * Docker
 * Wildfly - Swarm
 * Google's AutoValue
+* Apache commons - ftp
+  * FTP client / connection
+  * FTPS client / connection
+  * SFTP client / (ssh) connection

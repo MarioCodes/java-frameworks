@@ -1,16 +1,18 @@
 package es.msanchez.vertx.verticles;
 
-import io.vertx.core.Handler;
+import es.msanchez.vertx.addresses.EventBusAddress;
 import io.vertx.core.eventbus.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-/**
- * @author msanchez
- */
-@Component @Slf4j public class MessageHandler implements Handler<Message<String>> {
+@Component @Slf4j public class MessageHandler extends AbstractVerticleHandler<String> {
 
-  @Override public void handle(final Message<String> event) {
-    log.info(String.format("MessageHandler called with parameter: %s", event.body()));
+  @Override protected String handleMessageBody(final Message<String> event) {
+    log.info(String.format("FinalHandler called with parameter: %s", event.body()));
+    return null;
+  }
+
+  @Override protected EventBusAddress eventBusAddress() {
+    return EventBusAddress.MESSAGE_ADDRESS;
   }
 }

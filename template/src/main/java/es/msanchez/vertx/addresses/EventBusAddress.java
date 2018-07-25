@@ -2,7 +2,7 @@ package es.msanchez.vertx.addresses;
 
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor public enum EventBusAddresses {
+@AllArgsConstructor public enum EventBusAddress {
 
   MESSAGE_ADDRESS("vertx.message.address");
 

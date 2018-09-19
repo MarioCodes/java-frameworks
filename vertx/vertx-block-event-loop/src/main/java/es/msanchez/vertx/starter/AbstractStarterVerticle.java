@@ -19,9 +19,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
   protected void deployVerticle(final Class<? extends Verticle> workerClass) {
     DeploymentOptions options = new DeploymentOptions();
-    options.setWorker(true);
-    Verticle verticle = applicationContext.getBean(workerClass);
-    Vertx vertx = applicationContext.getBean(Vertx.class);
+    options.setWorker(false);
+    final Verticle verticle = applicationContext.getBean(workerClass);
+    final Vertx vertx = applicationContext.getBean(Vertx.class);
     vertx.deployVerticle(verticle, options, stringAsyncResult -> {
       if (stringAsyncResult.succeeded())
         log.info("Deployment succeded!");

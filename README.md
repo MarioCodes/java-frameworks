@@ -1,16 +1,13 @@
 # java-frameworks
-Personal implementations and templates of java frameworks.
+Personal implementations and testing-zone of java frameworks.
 
 ### current:
-* vert-x
-  * eventbus examples
-    * ~~String~~
-    * ~~POJO~~
-    * Move shared code from both examples to a common microservice. Declare it as dependency w. Maven.
-  * web
-    * rest API _(CRUD services)_
+
   
 ### to-implement:
+* Vert-X
+  * web
+    * rest API _(CRUD services)_
 * [Jackson](https://github.com/FasterXML/jackson)
 * Spring
   * Spring Boot

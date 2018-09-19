@@ -5,10 +5,10 @@ import io.vertx.core.eventbus.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-@Component @Slf4j public class MessageHandler extends AbstractVerticleHandler<String> {
+@Slf4j @Component public class BlockingHandler extends AbstractVerticleHandler<String> {
 
-  @Override protected String handleMessageBody(final Message<String> event) {
-    log.info(String.format("FinalHandler called with parameter: %s", event.body()));
+  @Override protected String handleMessageBody(final Message<String> body) {
+    log.info("Blocking handler called with message: {}", body.body());
     return null;
   }
 

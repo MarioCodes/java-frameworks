@@ -1,6 +1,6 @@
 package es.msanchez.vertx.starter;
 
-import es.msanchez.vertx.verticles.BlockingHandler;
+import es.msanchez.vertx.verticles.BlockingHandlerVerticle;
 import es.msanchez.vertx.verticles.ProducerVerticle;
 import io.vertx.core.Future;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j public class StarterVerticle extends AbstractStarterVerticle {
 
 	@Override protected void startVerticleInstances() {
-		deployVerticle(BlockingHandler.class);
+		deployVerticle(BlockingHandlerVerticle.class);
 		deployVerticle(ProducerVerticle.class);
 	}
 

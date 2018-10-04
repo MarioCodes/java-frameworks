@@ -1,6 +1,6 @@
 package es.msanchez.vertx.starter;
 
-import es.msanchez.vertx.verticles.NormalVerticle;
+import es.msanchez.vertx.verticles.AsyncVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
@@ -22,8 +22,9 @@ public class StarterVerticle extends AbstractStarterVerticle {
     DeploymentOptions options = new DeploymentOptions();
     options.setWorker(true);
 
-    this.getApplicationContext().getBean(Vertx.class)
-        .deployVerticle(NormalVerticle.class, options);
+    Vertx vertx = this.getApplicationContext().getBean(Vertx.class);
+    // vertx.deployVerticle(SyncVerticle.class, options);
+    vertx.deployVerticle(AsyncVerticle.class, options);
   }
 
   @Override

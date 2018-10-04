@@ -7,11 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class NormalVerticle extends AbstractVerticle {
+public class SyncVerticle extends AbstractVerticle {
 
   /**
    * As this executes blocking code, it should be deployed as a worker or with
    *  {@link io.vertx.core.Vertx#executeBlocking(Handler, Handler) executeBlocking}.
+   *
+   *  Once this method has completed, the verticle will be considered started.
    */
   @Override
   public void start() throws InterruptedException {

@@ -6,6 +6,8 @@ import io.vertx.core.Handler;
 import io.vertx.core.eventbus.Message;
 
 /**
+ * Do not use directly, only override.
+ *
  * @author msanchez
  */
 public abstract class AbstractVerticleHandler<R> extends AbstractVerticle

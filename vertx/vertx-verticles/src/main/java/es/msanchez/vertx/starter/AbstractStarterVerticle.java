@@ -11,7 +11,9 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@Getter @Slf4j public abstract class AbstractStarterVerticle extends AbstractVerticle {
+@Slf4j
+@Getter
+public abstract class AbstractStarterVerticle extends AbstractVerticle {
 
   @Setter private AnnotationConfigApplicationContext applicationContext;
 
@@ -19,7 +21,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
   protected void deployVerticle(final Class<? extends Verticle> workerClass) {
     DeploymentOptions options = new DeploymentOptions();
-    options.setWorker(true);
     Verticle verticle = applicationContext.getBean(workerClass);
     Vertx vertx = applicationContext.getBean(Vertx.class);
     vertx.deployVerticle(verticle, options, stringAsyncResult -> {

@@ -33,3 +33,5 @@ Personal implementations and testing-zone of java frameworks.
   * FTP client / connection
   * FTPS client / connection
   * SFTP client / (ssh) connection
+* [HRRS](https://github.com/vy/hrrs)
+* Infinispan

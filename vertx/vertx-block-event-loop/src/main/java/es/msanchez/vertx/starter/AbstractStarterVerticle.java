@@ -11,26 +11,30 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@Getter @Slf4j public abstract class AbstractStarterVerticle extends AbstractVerticle {
+@Getter
+@Slf4j
+public abstract class AbstractStarterVerticle extends AbstractVerticle {
 
-  @Setter private AnnotationConfigApplicationContext applicationContext;
+  @Setter
+  private AnnotationConfigApplicationContext applicationContext;
 
   private SpringRegister register = new SpringRegister();
 
-  protected void deployVerticle(final Class<? extends Verticle> workerClass) {
-    DeploymentOptions options = new DeploymentOptions();
-    options.setWorker(false);
+  protected void deployVerticle(final Class<? extends Verticle> workerClass, boolean worker) {
+    final DeploymentOptions options = new DeploymentOptions();
+    options.setWorker(worker);
     final Verticle verticle = applicationContext.getBean(workerClass);
     final Vertx vertx = applicationContext.getBean(Vertx.class);
     vertx.deployVerticle(verticle, options, stringAsyncResult -> {
       if (stringAsyncResult.succeeded())
-        log.info("Deployment succeded!");
+        log.info("Normal Verticle deployment succeded!");
       else
         log.info("Oh no! Deployment failed.");
     });
   }
 
-  @Override public void start() {
+  @Override
+  public void start() {
     applicationContext = register.initSpringApplicationContext(SpringConfig.class);
     startVerticleInstances();
   }

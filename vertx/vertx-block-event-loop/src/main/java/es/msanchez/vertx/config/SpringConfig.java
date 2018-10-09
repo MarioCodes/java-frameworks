@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
  * @author msanchez@neusta.de
  * @since Nov 28, 2017 - 1.0.0
  */
-@Configuration @ComponentScan(basePackages = { "es.msanchez.vertx.**" })
+@Configuration
+@ComponentScan(basePackages = { "es.msanchez.vertx.**" })
 public class SpringConfig {
 
   @Bean

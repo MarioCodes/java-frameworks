@@ -2,13 +2,15 @@
 Personal implementations and testing-zone of java frameworks.
 
 ### current:
-
+* Vert-x
+  * Differences between all types of verticles
   
 ### to-implement:
-* Vert-X
+* Vert-x
   * What happens if I block all the workers in the pool?
   * web
     * rest API _(CRUD services)_
+  * Test Multilanguage Verticles
 * [Jackson](https://github.com/FasterXML/jackson)
 * Spring
   * Spring Boot
@@ -35,3 +37,4 @@ Personal implementations and testing-zone of java frameworks.
   * SFTP client / (ssh) connection
 * [HRRS](https://github.com/vy/hrrs)
 * Infinispan
+* [Java NIO / NIO.2](http://tutorials.jenkov.com/java-nio/index.html)

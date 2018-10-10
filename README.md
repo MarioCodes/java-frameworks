@@ -10,6 +10,7 @@ Personal implementations and testing-zone of java frameworks.
   * What happens if I block all the workers in the pool?
   * web
     * rest API _(CRUD services)_
+  * Test Multilanguage Verticles
 * [Jackson](https://github.com/FasterXML/jackson)
 * Spring
   * Spring Boot

@@ -12,18 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StarterVerticle extends AbstractVerticle {
 
-	private AnnotationConfigApplicationContext context;
-
-	private SpringRegister register = new SpringRegister();
-
 	@Override
 	public void start() {
-		context = register.iniSpringConfig(SpringConfig.class);
+		final SpringRegister register = new SpringRegister();
+		final AnnotationConfigApplicationContext context = register.iniSpringConfig(SpringConfig.class);
+		final EventBus bus = context.getBean(EventBus.class);
 
-		EventBus bus = context.getBean(EventBus.class);
-		vertx.setPeriodic(1000, event -> {
-			bus.send(EventBusAddresses.STRING_ADDRESS.toString(), "producer");
-			log.info("Sent message {}", "producer");
+		this.vertx.setPeriodic(1000, event -> {
+			final String message = "oh no!";
+			bus.send(EventBusAddresses.STRING_ADDRESS.toString(), message);
+			log.info("Sent message: {} to EventBus", message);
 		});
 	}
 }

@@ -11,7 +11,7 @@ public class MessageHandler implements Handler<Message<String>> {
 
 	@Override
 	public void handle(final Message<String> event) {
-		log.info("Received message: {} from through EventBus", event.body());
+		log.info("Received message: {} from EventBus", event.body());
 	}
 
 }

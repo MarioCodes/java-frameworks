@@ -10,6 +10,6 @@ public enum EventBusAddresses {
 
 	@Override
 	public String toString() {
-		return address.toString();
+		return address;
 	}
 }

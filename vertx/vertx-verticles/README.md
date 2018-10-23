@@ -12,7 +12,7 @@ On the other side, the worker verticles run on a different Thread than the main 
 The downside of using always workers, is that the max. concurrency achievable is much lesser than using normal verticles + workers. With a lot of blocking tasks, you may create a processing queue.
 
 ### Multi-threaded worker verticles  
-It can be executed by more than one Thread concurrently. Standard Java techniques for concurrency will be needed when programming.  
+It can be executed by more than one Thread concurrently. Standard Java techniques for concurrency will be needed when programming. It's an advanced feature and they're not supported through all of Vert.x parts.   
 
 #### References  
 https://vertx.io/docs/vertx-core/java/#_verticle_types  

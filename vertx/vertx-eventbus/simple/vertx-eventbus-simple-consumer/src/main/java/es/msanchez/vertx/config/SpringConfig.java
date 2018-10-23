@@ -7,11 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 
-@ComponentScan(basePackages = {
-		"es.msanchez.vertx.**"
-})
 @Configuration
+@ComponentScan(basePackages = { "es.msanchez.vertx.**" })
 public class SpringConfig {
+
 	@Bean
 	public Vertx vertx() {
 		return Vertx.currentContext().owner();

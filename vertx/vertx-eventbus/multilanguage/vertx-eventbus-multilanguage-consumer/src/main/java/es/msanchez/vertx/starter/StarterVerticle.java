@@ -1,14 +1,13 @@
 package es.msanchez.vertx.starter;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import es.msanchez.vertx.address.EventBusAddresses;
 import es.msanchez.vertx.config.SpringConfig;
-import es.msanchez.vertx.handler.MessageHandler;
 import es.msanchez.vertx.utilities.SpringRegister;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.eventbus.EventBus;
+import io.vertx.core.Vertx;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@Slf4j
 public class StarterVerticle extends AbstractVerticle {
 
 	@Override
@@ -16,9 +15,13 @@ public class StarterVerticle extends AbstractVerticle {
 		final SpringRegister register = new SpringRegister();
 		final AnnotationConfigApplicationContext context = register.iniSpringConfig(SpringConfig.class);
 
-		final MessageHandler handler = context.getBean(MessageHandler.class);
-		final EventBus bus = context.getBean(EventBus.class);
-
-		bus.consumer(EventBusAddresses.STRING_ADDRESS.toString(), handler);
+		final Vertx vertx = context.getBean(Vertx.class);
+		vertx.deployVerticle("ConsumerVerticle.js", res -> {
+			if(res.succeeded()) {
+				log.info("JS verticle succeded");
+			} else {
+				log.error("JS verticle failed: ", res.cause());
+			}
+		});
 	}
 }

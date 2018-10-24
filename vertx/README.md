@@ -22,3 +22,15 @@ It can be executed by more than one Thread concurrently. Standard Java technique
 #### References  
 https://vertx.io/docs/vertx-core/java/#_verticle_types  
 https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8
+
+### Polyglot Verticles  
+_(For the example, I've used JS)_  
+It needs a new dependency in our _pom.xml_
+```
+<dependency>
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-lang-js</artifactId>
+    <version>3.0.0</version>
+</dependency>
+```  
+Watch out as by default `mvn clean install` does not pack _*.js_ files into a _-fat.jar_ if they're in a default java package. I've solved this, by writting the _.js_ verticle into the _/resources_ folder.

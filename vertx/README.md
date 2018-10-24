@@ -1,4 +1,4 @@
-To compile & execute:  
+### Compile & execute:  
 ```
 mvn clean install && java -jar target/[substitute_with_name]-fat.jar -cluster
 ```
@@ -33,4 +33,11 @@ It needs a new dependency in our _pom.xml_
     <version>3.0.0</version>
 </dependency>
 ```  
-Watch out as by default `mvn clean install` does not pack _*.js_ files into a _-fat.jar_ if they're in a default java package. I've solved this, by writting the _.js_ verticle into the _/resources_ folder.
+Watch out as by default `mvn clean install` does not pack _*.js_ files into a _-fat.jar_ if they're in a default java package. I've solved this, by writting the _.js_ verticle into the _/resources_ folder.  
+Also, for the _.js_ case, it may be needed to install _npm_ and _vertx-3_ dependencies for it to work.  
+```
+sudo apt-get install npm
+npm install vertx3-min
+```  
+#### Reference with examples
+https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js

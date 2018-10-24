@@ -2,7 +2,7 @@
 Personal implementations and testing-zone of java frameworks.
 
 ### current:
-* Vert-x
+* Spring Cache (w. Infinispan)
   
   
 ### to-implement:
@@ -12,7 +12,6 @@ Personal implementations and testing-zone of java frameworks.
     * rest API _(CRUD services)_
 * [Jackson](https://github.com/FasterXML/jackson)
 * Spring
-  * Spring Cache (w. Infinispan)
   * Spring Boot
   * Spring JPA
     * jparepository

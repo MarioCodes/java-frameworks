@@ -1,13 +1,13 @@
-## java-frameworks-implementations
+# java-frameworks-implementations
 Testing-zone for java frameworks.
 
-### Vertx
-#### Compile & execute:  
+## Vertx
+### Compile & execute:  
 ```
 mvn clean install && java -jar target/[substitute_with_name]-fat.jar -cluster
 ```
 
-#### Standard vs Worker Verticle
+### Standard vs Worker Verticle
 Concurrency is handled completely by Vert.x  
 
 When created, a _standard verticle_ will have one Event-loop assigned to it (it'll always use the same) and the start method it's called within that Event-loop.
@@ -20,14 +20,14 @@ On the other side, the worker verticles run on a different Thread than the main 
 
 The downside of using always workers, is that the max. concurrency achievable is much lesser than using normal verticles + workers. With a lot of blocking tasks, you may create a processing queue.
 
-#### Multi-threaded worker verticles  
+### Multi-threaded worker verticles  
 It can be executed by more than one Thread concurrently. Standard Java techniques for concurrency will be needed when programming. It's an advanced feature and they're not supported through all of Vert.x parts.   
 
-##### References  
+#### References  
 https://vertx.io/docs/vertx-core/java/#_verticle_types  
 https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8
 
-#### Polyglot Verticles  
+### Polyglot Verticles  
 _(For the example, I've used JS)_  
 It needs a new dependency in our _pom.xml_
 ```
@@ -43,5 +43,5 @@ Also, for the _.js_ case, it may be needed to install _npm_ and _vertx-3_ depend
 sudo apt-get install npm
 npm install vertx3-min
 ```  
-##### Reference with examples
+#### Reference with examples
 https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js

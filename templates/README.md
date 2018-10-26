@@ -13,6 +13,13 @@ mvn clean install
 java -jar [name]-fat.jar -cluster
 ```  
 
+#### Template Springboot
+##### How-to start
+```  
+mvn clean install
+java -jar [name].jar  
+```
+
 #### Common Frameworks
 * Slf4j with Logback  
 * Lombok  

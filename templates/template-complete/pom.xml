@@ -25,6 +25,7 @@
 	<junit.version>4.12</junit.version>
 	<mockito.version>2.12.0</mockito.version>
 	<assertj.version>3.8.0</assertj.version>
+	  <codearte.catchexception.version>1.4.4</codearte.catchexception.version>
 
 	<!-- Maven Plugin Versions -->
 	<maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
@@ -109,14 +110,13 @@
 		    <scope>test</scope>
 		</dependency>
 
-		<!-- Vertx Unit Testing -->
 		<dependency>
-		    <groupId>io.vertx</groupId>
-		    <artifactId>vertx-unit</artifactId>
-		    <version>${vertx.version}</version>
-		    <scope>test</scope>
+			<groupId>eu.codearte.catch-exception</groupId>
+			<artifactId>catch-exception</artifactId>
+			<version>${codearte.catchexception.version}</version>
 		</dependency>
-  	</dependencies>
+
+	</dependencies>
   
 	<build>
   		<plugins>

@@ -1,7 +1,9 @@
-package es.msanchez.templates.spring.starter;
+package es.msanchez.spring.cache.starter;
 
-import es.msanchez.templates.spring.config.SpringConfig;
-import es.msanchez.templates.spring.utilities.SpringRegister;
+import es.msanchez.spring.cache.config.SpringConfig;
+import es.msanchez.spring.cache.dao.BookRepository;
+import es.msanchez.spring.cache.dao.BookRepositoryImpl;
+import es.msanchez.spring.cache.utilities.SpringRegister;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,14 +14,18 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
     final AnnotationConfigApplicationContext context = prepareSpring();
     log.info("Configuration is ready");
 
-    final DummyBean bean = context.getBean(DummyBean.class);
+    final BookRepository bookRepository = context.getBean(BookRepositoryImpl.class);
+    bookRepository.getByIsbn("1234");
+    bookRepository.getByIsbn("1234");
+    bookRepository.getByIsbn("5678");
+    bookRepository.getByIsbn("9012");
+    bookRepository.getByIsbn("9012");
 
     log.info("Application is done");
   }
 
   private static AnnotationConfigApplicationContext prepareSpring() {
     final SpringRegister register = new SpringRegister();
-
     return register.initSpringApplicationContext(SpringConfig.class);
   }
 

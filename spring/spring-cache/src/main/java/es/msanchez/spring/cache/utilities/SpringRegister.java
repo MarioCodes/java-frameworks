@@ -1,4 +1,4 @@
-package es.msanchez.templates.spring.utilities;
+package es.msanchez.spring.cache.utilities;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -10,7 +10,7 @@
 	<maven.compiler.config.version>1.8</maven.compiler.config.version>
 
 	<!-- General -->
-	<main.class>es.msanchez.templates.spring.starter.Main</main.class> <!-- Override in local POM -->
+	<main.class>es.msanchez.spring.cache.starter.Main</main.class> <!-- Override in local POM -->
 
 	<!-- Normal Dependency Versions -->
 	<vertx.version>3.5.4</vertx.version>

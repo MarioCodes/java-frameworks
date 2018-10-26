@@ -3,80 +3,34 @@
   <groupId>es.msanchez.frameworks</groupId>
   <artifactId>vertx-spring-template</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  <properties>
-  	  	<!-- General Versions -->
-  	<maven.compiler.config.version>1.8</maven.compiler.config.version>
-	    <main.verticle>es.msanchez.vertx.starter.StarterVerticle</main.verticle> <!-- Override in local POM -->
+  <name>complete-template-maven</name>
 
-	      	<!-- Dependency Versions -->
-  	<vertx.version>3.5.0</vertx.version>
-  	<lombok.version>1.16.18</lombok.version>
-  	<slf4j.version>1.7.25</slf4j.version>
-	<logback.version>1.2.3</logback.version>
-	<spring.version>5.0.2.RELEASE</spring.version>
-	<spring.data.version>2.0.2.RELEASE</spring.data.version>
-	
-  	<!-- Test Dependency Versions -->
-  	<junit.version>4.12</junit.version>
-  	<mockito.version>2.12.0</mockito.version>
-  	<assertj.version>3.8.0</assertj.version>
-  	
-  	<!-- Maven Plugin Versions -->
-  	<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
-  	<maven.shade.version>2.3</maven.shade.version>
-  	
-  	<!-- Other Properties -->
-  	<main.class>io.vertx.core.Starter</main.class> <!-- Do not change if Vertx -->
-  	<main.verticle>es.msanchez.implementations.vertx.starter.StarterVerticle</main.verticle> <!-- Override in local POM -->
-  </properties>
-  
-<build>
-  	<pluginManagement>
-  		<plugins>
-		  <!-- Sets the compiler version -->
-		  <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>${maven.compiler.plugin.version}</version>
-	        <configuration>
-	          <source>${maven.compiler.config.version}</source>
-	          <target>${maven.compiler.config.version}</target>
-	        </configuration>
-	      </plugin>
-	      
-	    	<!-- Fat Jar -->
-		    <plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-shade-plugin</artifactId>
-			  <version>${maven.shade.version}</version>
-			  <executions>
-			    <execution>
-			      <phase>package</phase>
-			      <goals>
-			        <goal>shade</goal>
-			      </goals>
-			      <configuration>
-			        <transformers>
-			          <transformer
-			            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-			            <manifestEntries>
-			              <Main-Class>${main.class}</Main-Class> <!-- Comes with Vertx. Do not touch -->
-			              <Main-Verticle>${main.verticle}</Main-Verticle> <!-- Change to the main verticle -->
-			            </manifestEntries>
-			          </transformer>
-			        </transformers>
-			        <artifactSet/>
-			        <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
-			      </configuration>
-			    </execution>
-			  </executions>
-			</plugin>
-  		</plugins>
-  	</pluginManagement>
-  </build>
-	
-	<dependencyManagement>
+	  <properties>
+	  	<!-- Java language level -->
+		<maven.compiler.config.version>1.8</maven.compiler.config.version>
+
+		<!-- General -->
+	  	<main.class>io.vertx.core.Starter</main.class> <!-- Do not change if Vertx -->
+	  	<main.verticle>es.msanchez.templates.complete.starter.StarterVerticle</main.verticle> <!-- Override in local POM -->
+
+		<!-- Normal Dependency Versions -->
+	  	<vertx.version>3.5.0</vertx.version>
+	  	<lombok.version>1.16.18</lombok.version>
+	  	<slf4j.version>1.7.25</slf4j.version>
+		<logback.version>1.2.3</logback.version>
+		<spring.version>5.0.2.RELEASE</spring.version>
+		<spring.data.version>2.0.2.RELEASE</spring.data.version>
+		
+	  	<!-- Test Dependency Versions -->
+	  	<junit.version>4.12</junit.version>
+	  	<mockito.version>2.12.0</mockito.version>
+	  	<assertj.version>3.8.0</assertj.version>
+	  	
+	  	<!-- Maven Plugin Versions -->
+	  	<maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
+	  	<maven.shade.version>2.3</maven.shade.version>
+	  </properties>
+
   	<dependencies>
   		<!-- Vertx -->
 		<dependency>
@@ -85,13 +39,7 @@
 		    <version>${vertx.version}</version>
 		</dependency>
 	
-		<dependency>
-		  <groupId>io.vertx</groupId>
-		  <artifactId>vertx-web</artifactId>
-		  <version>${vertx.version}</version>
-		</dependency>
-	
-		<!-- Vertx Hazelcast. It administrates vertx's clusters -->
+		<!-- Vertx Hazelcast. It administrates vertx' clusters -->
 		<dependency>
 		    <groupId>io.vertx</groupId>
 		    <artifactId>vertx-hazelcast</artifactId>
@@ -169,6 +117,48 @@
 		    <scope>test</scope>
 		</dependency>
   	</dependencies>
-  </dependencyManagement>
   
+	<build>
+  		<plugins>
+		  <!-- Sets the compiler version -->
+		  <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>${maven.compiler.plugin.version}</version>
+	        <configuration>
+	          <source>${maven.compiler.config.version}</source>
+	          <target>${maven.compiler.config.version}</target>
+	        </configuration>
+	      </plugin>
+
+	    	<!-- Fat Jar -->
+		    <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-shade-plugin</artifactId>
+			  <version>${maven.shade.version}</version>
+			  <executions>
+			    <execution>
+			      <phase>package</phase>
+			      <goals>
+			        <goal>shade</goal>
+			      </goals>
+			      <configuration>
+			        <transformers>
+			          <transformer
+			            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+			            <manifestEntries>
+			              <Main-Class>${main.class}</Main-Class> <!-- Comes with Vertx. Do not touch -->
+			              <Main-Verticle>${main.verticle}</Main-Verticle>
+			            </manifestEntries>
+			          </transformer>
+			        </transformers>
+			        <artifactSet/>
+			        <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
+			      </configuration>
+			    </execution>
+			  </executions>
+			</plugin>
+  		</plugins>
+	</build>
+
 </project>

@@ -1,5 +1,5 @@
 # java-frameworks-implementations
-Testing-zone for java frameworks.
+Personal Testing-zone and notes for java frameworks.
 
 ## Spring
 ### Spring Cache

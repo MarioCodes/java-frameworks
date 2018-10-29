@@ -2,26 +2,21 @@ package es.msanchez.spring.cache.dao;
 
 import es.msanchez.spring.cache.entity.Book;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StopWatch;
 
 /**
- * Implementation to simulate a Database request
+ * Implementation to simulate a Database request.
  */
 @Slf4j
 @Component
 public class BookRepositoryImpl implements BookRepository {
 
-  @Override public Book getByIsbn(final String isbn) {
-    final StopWatch watch = new StopWatch();
-    watch.start();
-
+  @Override
+  @Cacheable(value = "books", key = "#isbn")
+  public Book getByIsbn(final String isbn) {
     this.simulateDatabaseAccess();
-    final Book book = new Book(isbn, "this is a book title");
-
-    watch.stop();
-    log.debug("Retrieved book: {} in: {} millis", book, watch.getTotalTimeMillis());
-    return book;
+    return new Book(isbn, "this is a book title");
   }
 
   private void simulateDatabaseAccess() {

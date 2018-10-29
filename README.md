@@ -2,7 +2,8 @@
 Personal Testing-zone and notes for java frameworks.
 
 ## Spring
-### Spring Cache
+### Spring Context
+#### Spring Cache
 For a basic Cache we need:  
 * `@EnableCaching` tag in `@Configuration`  
 * Declare `CacheManager` Bean  
@@ -12,7 +13,7 @@ We may declare +1 cache(s) at the cache manager and select the one we want to us
 The cache will only be triggered when the exact key is given again. **Then the method won't be executed** and the value will be directly returned. If the parameters don't match any key, the method will be executed as normal and then the value will be saved.  
 Caution with logs in big apps as they need to be written accordingly.
 
-#### References
+##### References
 https://spring.io/guides/gs/caching/  
 https://www.baeldung.com/spring-cache-tutorial
 

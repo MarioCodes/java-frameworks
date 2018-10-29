@@ -2,13 +2,12 @@ package es.msanchez.spring.cache.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCache;
-import org.springframework.cache.support.SimpleCacheManager;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Arrays;
+import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableCaching
@@ -17,9 +16,15 @@ public class SpringConfig {
 
   @Bean
   public CacheManager cacheManager() {
-    final SimpleCacheManager manager = new SimpleCacheManager();
-    manager.setCaches(Arrays.asList(new ConcurrentMapCache("books")));
-    return manager;
+    return new EhCacheCacheManager(this.ehCacheManager().getObject());
+  }
+
+  @Bean
+  public EhCacheManagerFactoryBean ehCacheManager() {
+    final EhCacheManagerFactoryBean factory = new EhCacheManagerFactoryBean();
+    factory.setConfigLocation(new ClassPathResource("ehcache.xml"));
+    factory.setShared(true);
+    return factory;
   }
 
 }

@@ -8,7 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.StopWatch;
 
-@Slf4j public class Main {
+@Slf4j
+public class Main {
 
   public static void main(String[] args) {
     log.info("Application started");

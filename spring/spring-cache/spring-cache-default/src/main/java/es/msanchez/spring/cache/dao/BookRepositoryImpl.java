@@ -3,13 +3,13 @@ package es.msanchez.spring.cache.dao;
 import es.msanchez.spring.cache.entity.Book;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Implementation to simulate a Database request.
  */
 @Slf4j
-@Component
+@Repository
 public class BookRepositoryImpl implements BookRepository {
 
   @Override

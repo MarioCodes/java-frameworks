@@ -15,9 +15,8 @@ We may declare +1 cache(s) at the cache manager and select the one we want to us
 Caution with logs in big apps as they need to be written accordingly.  
 The hard part is not knowing when to cache something, but to know when to Evict the cache.  
 
-#### Default Cache
-It does not provide any contract to Evict the different Caches. Useful when we need a really basic Cache.  
-Spring provides `Cache` and `CacheManager` as main abstractions for the caching logic. They do not provide the actual storage to store data. For that we have some options out of the box on the JDK.  
+#### Default Cache  
+Spring provides `Cache` and `CacheManager` as main abstractions for the caching logic. They do not provide the actual storage to store data. For that we have some options out of the box on the JDK such as `SimpleCacheManager`. It's based on `ConcurrentMap` and it's useful when we need a really basic Cache, but it does not support the eviction or persistence of the Cache.  
 
 #### EHCache
 The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`.  

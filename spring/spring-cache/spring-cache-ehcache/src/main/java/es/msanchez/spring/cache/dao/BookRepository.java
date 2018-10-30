@@ -8,4 +8,6 @@ public interface BookRepository {
 
   public Book getByIsbn(final String isbn);
 
+  public void refreshAllBooks();
+
 }

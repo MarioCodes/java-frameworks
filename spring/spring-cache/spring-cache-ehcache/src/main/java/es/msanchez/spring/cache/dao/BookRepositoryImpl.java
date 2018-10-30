@@ -22,7 +22,7 @@ public class BookRepositoryImpl implements BookRepository {
 
   @CacheEvict(value = "books", allEntries = true)
   public void refreshAllBooks() {
-    // removes all from cache
+    log.info("Evicted books cache.");
   }
 
   private void simulateDatabaseAccess() {

@@ -19,7 +19,7 @@
 	<logback.version>1.2.3</logback.version>
 	<spring.version>5.0.8.RELEASE</spring.version>
 	<spring.data.version>2.0.2.RELEASE</spring.data.version>
-	<cache.manager.version>3.6.1</cache.manager.version>
+    <cache.manager.version>2.10.6</cache.manager.version>
 
 	<!-- Test Dependency Versions -->
 	<junit.version>4.12</junit.version>
@@ -40,20 +40,19 @@
             <version>${spring.version}</version>
         </dependency>
 
-		<!-- Support for ehcache -->
+        <!-- Spring support for ehcache -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- Cache Manager -->
-		<dependency>
-			<groupId>org.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>${cache.manager.version}</version>
-		</dependency>
-
+        <!-- Cache Manager -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${cache.manager.version}</version>
+        </dependency>
 
 		<!-- Logging -->
 		<dependency>

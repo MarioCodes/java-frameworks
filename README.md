@@ -22,10 +22,15 @@ Spring provides `Cache` and `CacheManager` as main abstractions for the caching 
 The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`.  
 The config for the several caches is specified in `ehcache.xml`
 
+#### Infinispan  
+It's an in-memory, highly concurrent Cache. It has built-in Eviction. It may be deployed in local mode but it's a best choice for its cluster mode (distributed or replicated). 
+
 ##### References
 https://spring.io/guides/gs/caching/  
 https://www.baeldung.com/spring-cache-tutorial  
-http://websystique.com/spring/spring-4-cache-tutorial-with-ehcache/
+http://websystique.com/spring/spring-4-cache-tutorial-with-ehcache/  
+https://blog.infinispan.org/2010/02/infinispan-as-local-cache.html  
+http://infinispan.org/docs/stable/user_guide/user_guide.html#clustering
 
 ## Vertx
 ### Compile & execute:  

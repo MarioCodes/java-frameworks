@@ -20,7 +20,7 @@ Spring provides `Cache` and `CacheManager` as main abstractions for the caching 
 
 #### EHCache
 The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`.  
-The config for the several caches are specified in `ehcache.xml`
+The config for the several caches is specified in `ehcache.xml`
 
 ##### References
 https://spring.io/guides/gs/caching/  

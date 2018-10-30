@@ -5,13 +5,15 @@ Personal Testing-zone and notes for java frameworks.
 ### Spring Context
 #### Spring Cache
 For a basic Cache we need:  
-* `@EnableCaching` tag in `@Configuration`  
-* Declare `CacheManager` Bean  
+* `@EnableCaching` tag in `@Configuration` class  
+* Declare a `CacheManager` Bean  
 * Tag the method to cache w. `@Cacheable`   
+* Create a method with @EvictAll
 
 We may declare +1 cache(s) at the cache manager and select the one we want to use in the method we tag. As key for the cache we may use any conjunction of the parameters we give to the method, or if this is a class, any of it's accessible variables.  
 The cache will only be triggered when the exact key is given again. **Then the method won't be executed** and the value will be directly returned. If the parameters don't match any key, the method will be executed as normal and then the value will be saved.  
-Caution with logs in big apps as they need to be written accordingly.
+Caution with logs in big apps as they need to be written accordingly.  
+The hard part is not knowing when to cache something, but to know when to Evict the cache.
 
 ##### References
 https://spring.io/guides/gs/caching/  

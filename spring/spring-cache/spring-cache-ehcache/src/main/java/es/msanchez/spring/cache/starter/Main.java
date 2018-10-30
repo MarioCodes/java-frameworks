@@ -21,6 +21,8 @@ import org.springframework.util.StopWatch;
     retrieveBook(bookRepository, "5678");
     retrieveBook(bookRepository, "9012");
     retrieveBook(bookRepository, "9012");
+    bookRepository.refreshAllBooks();
+    retrieveBook(bookRepository, "9012");
 
     log.info("Application is done");
   }

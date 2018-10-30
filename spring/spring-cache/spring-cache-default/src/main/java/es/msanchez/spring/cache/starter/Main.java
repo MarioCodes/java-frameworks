@@ -22,6 +22,8 @@ public class Main {
     retrieveBook(bookRepository, "5678");
     retrieveBook(bookRepository, "9012");
     retrieveBook(bookRepository, "9012");
+    bookRepository.refreshBooks();
+    retrieveBook(bookRepository, "9012");
 
     log.info("Application is done");
   }

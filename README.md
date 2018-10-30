@@ -20,7 +20,8 @@ It does not provide any contract to Evict the different Caches. Useful when we n
 Spring provides `Cache` and `CacheManager` as main abstractions for the caching logic. They do not provide the actual storage to store data. For that we have some options out of the box on the JDK.  
 
 #### EHCache
-The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`
+The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`.  
+The config for the several caches are specified in `ehcache.xml`
 
 ##### References
 https://spring.io/guides/gs/caching/  

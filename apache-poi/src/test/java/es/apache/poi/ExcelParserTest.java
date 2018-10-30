@@ -15,6 +15,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ExcelParserTest {
+  
   private final String FILE_NAME = "excel-file.xlsx";
 
   @InjectMocks

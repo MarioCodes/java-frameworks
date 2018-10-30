@@ -12,10 +12,15 @@ A cache itself may be imagined as a key-value map. For a basic Cache we need:
 
 We may declare +1 cache(s) at the cache manager and select the one we want to use in the method we tag. As key for the cache we may use any conjunction of the parameters given to the method, or if this is a class, any of it's accessible variables. The cache will only be triggered when the exact key is given again. **Then the method won't be executed** and the value will be directly given from the cache. If the parameters don't match any key, the method will be executed as normal and then the value will be saved into the cache to be returned the next time.  
 
-Spring provides `Cache` and `CacheManager` as main abstractions for the caching logic. They do not provide the actual storage to store data. For that we have some options out of the box on the JDK.  
-
 Caution with logs in big apps as they need to be written accordingly.  
 The hard part is not knowing when to cache something, but to know when to Evict the cache.  
+
+#### Default Cache
+It does not provide any contract to Evict the different Caches. Useful when we need a really basic Cache.  
+Spring provides `Cache` and `CacheManager` as main abstractions for the caching logic. They do not provide the actual storage to store data. For that we have some options out of the box on the JDK.  
+
+#### EHCache
+The entities to save, have to implement `Serializable` interface. If we don't do that, it'll throw a `NotSerializableException`
 
 ##### References
 https://spring.io/guides/gs/caching/  

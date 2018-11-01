@@ -3,29 +3,15 @@
   <artifactId>vertx-eventbus-simple-producer</artifactId>
   
   <parent>
-  	<groupId>es.msanchez.frameworks</groupId>
-  	<artifactId>frameworks-parent</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  	<relativePath>../../../../parent-pom/</relativePath>
+    <groupId>es.msanchez.frameworks</groupId>
+    <artifactId>vertx-pom</artifactId>
+    <version>1.0.0-RELEASE</version>
+  	<relativePath>../../../vertx-pom/</relativePath>
   </parent>
   
   <properties>
 	    <main.verticle>es.msanchez.vertx.starter.StarterVerticle</main.verticle> <!-- Override in local POM -->
   </properties>
-  
-  <build>
-	<plugins>
-	  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-		      
-	  <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-shade-plugin</artifactId>
-	  </plugin>
-    </plugins>
-  </build>
 	
   <dependencies>
         <!-- Vertx -->
@@ -33,28 +19,18 @@
             <groupId>io.vertx</groupId>
             <artifactId>vertx-core</artifactId>
         </dependency>
-    
-        <dependency>
-          <groupId>io.vertx</groupId>
-          <artifactId>vertx-web</artifactId>
-		</dependency>
 		
-		<dependency>
-		    <groupId>io.vertx</groupId>
-		    <artifactId>vertx-hazelcast</artifactId>
-		</dependency>
+        <!-- Cluster Manager -->
+    		<dependency>
+    		    <groupId>io.vertx</groupId>
+    		    <artifactId>vertx-hazelcast</artifactId>
+    		</dependency>
 		
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-        
-		<dependency>
-		    <groupId>org.springframework.data</groupId>
-		    <artifactId>spring-data-jpa</artifactId>
-		</dependency>
-
     
         <!-- Logging -->
         <dependency>
@@ -99,11 +75,15 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- Vertx Unit Testing -->
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-unit</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

@@ -1,137 +1,109 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>es.implementations.frameworks</groupId>
-  <artifactId>jaxb</artifactId>
-  <version>1.0.0-RELEASE</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.implementations.frameworks</groupId>
+    <artifactId>jaxb</artifactId>
+    <version>1.0.0-RELEASE</version>
 
-  <properties>
-  	<!-- java language -->
-	<maven.compiler.config.version>1.8</maven.compiler.config.version>
+    <properties>
+        <!-- java language -->
+        <maven.compiler.config.version>1.8</maven.compiler.config.version>
 
-  	<!-- maven plugins -->
-  	<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
-  	<maven.shade.version>2.3</maven.shade.version>
+        <!-- maven plugins -->
+        <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
 
-  	<!-- common dependencies -->
-  	<jaxb.version>2.2.11</jaxb.version>
-  	<eclipse.moxy.version>2.5.2</eclipse.moxy.version>
-	<slf4j.version>1.7.25</slf4j.version>
-	<logback.version>1.2.3</logback.version>
-	<lombok.version>1.16.6</lombok.version>
+        <!-- common dependencies -->
+        <jaxb.version>2.2.11</jaxb.version>
+        <eclipse.moxy.version>2.5.2</eclipse.moxy.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+        <lombok.version>1.16.6</lombok.version>
 
-  	<!-- testing dependencies -->
-  	<junit.version>4.11</junit.version>
-  	<assertj.version>3.8.0</assertj.version>
-  	<mockito.version>1.10.19</mockito.version>
-  </properties>
+        <!-- testing dependencies -->
+        <junit.version>4.11</junit.version>
+        <assertj.version>3.8.0</assertj.version>
+        <mockito.version>1.10.19</mockito.version>
+    </properties>
 
-   <dependencies>
-   	<!-- normal dependencies -->
-	 <dependency>
-		 <groupId>org.eclipse.persistence</groupId>
-		 <artifactId>org.eclipse.persistence.moxy</artifactId>
-	 	<version>${eclipse.moxy.version}</version>
-	 </dependency>
+    <dependencies>
+        <!-- normal dependencies -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.moxy</artifactId>
+            <version>${eclipse.moxy.version}</version>
+        </dependency>
 
-     <dependency>
-		 <groupId>javax.xml.bind</groupId>
-		 <artifactId>jaxb-api</artifactId>
-		 <version>${jaxb.version}</version>
-	 </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
 
-	<!-- Logging -->
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-api</artifactId>
-	    <version>${slf4j.version}</version>
-	</dependency>
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
-	<dependency>
-	    <groupId>ch.qos.logback</groupId>
-	    <artifactId>logback-classic</artifactId>
-	    <version>${logback.version}</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>ch.qos.logback</groupId>
-	    <artifactId>logback-core</artifactId>
-	    <version>${logback.version}</version>
-	</dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
 
-   	<!-- other frameworks -->
-	<dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <version>${lombok.version}</version>
-	</dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
 
-   	<!-- testing frameworks -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <!-- other frameworks -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
-	<dependency>
-	    <groupId>org.assertj</groupId>
-	    <artifactId>assertj-core</artifactId>
-	    <version>${assertj.version}</version>
-	    <scope>test</scope>
-	</dependency>
-	
-	<dependency>
-	    <groupId>org.mockito</groupId>
-	    <artifactId>mockito-all</artifactId>
-	    <version>${mockito.version}</version>
-	    <scope>test</scope>
-	</dependency>
+        <!-- testing frameworks -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-  </dependencies>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-  <build>
-  	<pluginManagement>
-  		<plugins>
-		  <!-- Sets the compiler version -->
-		  <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>${maven.compiler.plugin.version}</version>
-	        <configuration>
-	          <source>${maven.compiler.config.version}</source>
-	          <target>${maven.compiler.config.version}</target>
-	        </configuration>
-	      </plugin>
-	      
-	    	<!-- Fat Jar -->
-		    <plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-shade-plugin</artifactId>
-			  <version>${maven.shade.version}</version>
-			  <executions>
-			    <execution>
-			      <phase>package</phase>
-			      <goals>
-			        <goal>shade</goal>
-			      </goals>
-			      <configuration>
-			        <transformers>
-			          <transformer
-			            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-			            <manifestEntries>
-			              <Main-Class>${main.class}</Main-Class> <!-- Comes with Vertx. Do not touch -->
-			              <Main-Verticle>${main.verticle}</Main-Verticle> <!-- Change to the main verticle -->
-			            </manifestEntries>
-			          </transformer>
-			        </transformers>
-			        <artifactSet/>
-			        <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
-			      </configuration>
-			    </execution>
-			  </executions>
-			</plugin>
-  		</plugins>
-  	</pluginManagement>
-  </build>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Sets the compiler version -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.config.version}</source>
+                        <target>${maven.compiler.config.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>

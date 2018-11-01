@@ -23,6 +23,7 @@ import lombok.Getter;
  * @since Oct 19, 2017 - 1.0.0
  */
 public class ExcelParser {
+  
   @Getter
   private FileInputStream inputStream;
 

@@ -4,6 +4,7 @@
   <artifactId>spring-pom</artifactId>
   <version>1.0.0-RELEASE</version>
   <packaging>pom</packaging>
+  <description>common pom for all spring projects</description>
   
   <properties>
   	<!-- General Versions -->

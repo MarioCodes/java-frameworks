@@ -11,6 +11,7 @@ import example.jaxb.dto.LodgingDto;
 import lombok.Setter;
 
 public class JSONParser {
+
 	@Setter
 	private static String FILE;
 
@@ -21,7 +22,7 @@ public class JSONParser {
 	 */
 	public LodgingDto parse() {
 		try {
-			Unmarshaller unmarshaller = prepareUnmarshaller();
+			final Unmarshaller unmarshaller = prepareUnmarshaller();
 			loadProperties(unmarshaller);
 			return parse(unmarshaller);
 		} catch (JAXBException e) {
@@ -40,8 +41,8 @@ public class JSONParser {
 	}
 
 	private Unmarshaller prepareUnmarshaller() throws JAXBException {
-		JAXBContext context = JAXBContext.newInstance(LodgingDto.class);
-		Unmarshaller unmarshaller = context.createUnmarshaller();
+		final JAXBContext context = JAXBContext.newInstance(LodgingDto.class);
+		final Unmarshaller unmarshaller = context.createUnmarshaller();
 		return unmarshaller;
 	}
 

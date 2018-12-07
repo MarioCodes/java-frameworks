@@ -3,6 +3,7 @@ package example.jaxb.core.xml;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -26,7 +27,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testCaseLodgingDtoIsCorrectlyParsed() throws Exception {
+	public void testCaseLodgingDtoIsCorrectlyParsed() {
 		// Given
 		LodgingDto lodgingDto = null;
 
@@ -45,7 +46,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testCaseRoomDtoIsCorrectlyParsed() throws Exception {
+	public void testCaseRoomDtoIsCorrectlyParsed() {
 		// Given
 		RoomDto roomDto = null;
 
@@ -60,7 +61,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testCasePathIsNullEmptyObjectIsGivenBack() throws Exception {
+	public void testCasePathIsNullEmptyObjectIsGivenBack() {
 		// Given
 		XMLParser.setXmlPath(null);
 

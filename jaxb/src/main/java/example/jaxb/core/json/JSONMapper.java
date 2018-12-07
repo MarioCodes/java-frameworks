@@ -10,7 +10,6 @@ import javax.xml.bind.PropertyException;
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 
 import example.jaxb.dto.LodgingDto;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -27,21 +26,22 @@ public class JSONMapper {
     void map(final LodgingDto dto,
              final File file) {
         try {
-            Marshaller marshaller = prepareMarshaller();
+            final Marshaller marshaller = setUpMarshaller();
             loadMarshallerProperties(marshaller);
             marshaller.marshal(dto, file);
-        } catch (JAXBException e) {
-            log.error("Error on map DTO to JSON. {}", e);
+        } catch (final JAXBException ex) {
+            log.error("Error on map DTO to JSON. {}", ex);
         }
     }
 
-    private void loadMarshallerProperties(Marshaller marshaller) throws PropertyException {
+    private void loadMarshallerProperties(final Marshaller marshaller) throws PropertyException {
         marshaller.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.setProperty(MarshallerProperties.JSON_INCLUDE_ROOT, true);
     }
 
-    private Marshaller prepareMarshaller() throws JAXBException {
-        JAXBContext context = obtainContext();
+    private Marshaller setUpMarshaller() throws JAXBException {
+        final JAXBContext context = obtainContext();
         return context.createMarshaller();
     }
 

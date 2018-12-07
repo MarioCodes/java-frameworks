@@ -1,0 +1,16 @@
+{
+   "lodgingDto" : {
+      "address" : "Reg. Str.",
+      "city" : "Bremerhaven",
+      "country" : "Deutschland",
+      "county" : "Baja Sajonia",
+      "id" : 50,
+      "phoneNumber" : "645525555",
+      "roomDto" : {
+         "extras" : "Cuarto de baño",
+         "id" : 20,
+         "type" : "Individual"
+      },
+      "state" : "Madrid"
+   }
+}

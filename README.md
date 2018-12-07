@@ -23,7 +23,7 @@ The entities to save, have to implement `Serializable` interface. If we don't do
 The config for the several caches is specified in `ehcache.xml`
 
 #### Infinispan  
-It's an in-memory, highly concurrent Cache. It has built-in Eviction. It may be deployed in local mode but it's a best choice for its cluster mode (distributed or replicated). 
+It's an in-memory, highly concurrent Cache. It has built-in Eviction. It may be deployed in local mode but it's a best choice for its cluster mode (distributed or replicated).
 
 ##### References
 https://spring.io/guides/gs/caching/  
@@ -77,3 +77,18 @@ npm install vertx3-min
 ```  
 #### Reference  
 https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js
+
+## Codearte's Catch exception
+The only thing it does, it's to do a bit easier to test and assert for exceptions in a Test Driven Development-like way. **To use together with AssertJ.** It only has two methods which are useful to me:
+```
+// When
+BDDCatchException.when(this.instance).methodWhichThrowsException();
+
+// Then
+Assertions.assertThat(BDDCatchException.caughtException())
+            .isNotNull()
+            .isExactlyInstanceOf(IndexOutOfBoundsException.class);
+```
+
+#### Reference
+https://github.com/Codearte/catch-exception

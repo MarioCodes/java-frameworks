@@ -27,8 +27,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	@Ignore
-	public void testCaseLodgingDtoIsCorrectlyParsed() throws Exception {
+	public void testCaseLodgingDtoIsCorrectlyParsed() {
 		// Given
 		LodgingDto lodgingDto = null;
 
@@ -47,7 +46,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testCaseRoomDtoIsCorrectlyParsed() throws Exception {
+	public void testCaseRoomDtoIsCorrectlyParsed() {
 		// Given
 		RoomDto roomDto = null;
 
@@ -62,7 +61,7 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testCasePathIsNullEmptyObjectIsGivenBack() throws Exception {
+	public void testCasePathIsNullEmptyObjectIsGivenBack() {
 		// Given
 		XMLParser.setXmlPath(null);
 

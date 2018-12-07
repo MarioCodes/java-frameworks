@@ -23,9 +23,7 @@ public class XMLMapper {
 	private static String xmlPath;
 
 	/**
-	 * 
 	 * @param dto
-	 * @param path
 	 */
 	public void map(LodgingDto dto) {
 		try {

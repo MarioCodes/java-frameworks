@@ -33,7 +33,7 @@ public class XMLMapperTest {
 	}
 
 	@Test
-	public void testCaseCorrectFileIsCreated() throws Exception {
+	public void testCaseCorrectFileIsCreated() {
 		// Given
 		LodgingDto lodgingDto = prepareDto();
 

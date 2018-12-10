@@ -96,7 +96,7 @@ https://github.com/Codearte/catch-exception
 ## AssertJ  
 Outside of the basic `Assertions.assertThat(x).isEqualTo(y);` there is:
 
-#### Soft Assertions  
+### Soft Assertions  
 Used to assert DTOs. With the basic Assertion when the first fails, it stops there and only shows that error. With soft assertions it executes all and shows all where there was an error.
 ```
 SoftAssertions.assertSoftly(soft -> {
@@ -106,7 +106,7 @@ SoftAssertions.assertSoftly(soft -> {
 });
 ```
 
-#### Assert Collections
+### Assert Collections
 Assertions if the original Beans are accessible to compare against
 ```
 // Given
@@ -137,3 +137,5 @@ Assertions.assertThat(fellowship)
         .contains("aragorn", "frodo", "sam")
         .doesNotContain("sauron");
 ```
+#### Reference
+https://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html

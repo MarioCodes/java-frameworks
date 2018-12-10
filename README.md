@@ -92,3 +92,48 @@ Assertions.assertThat(BDDCatchException.caughtException())
 
 #### Reference
 https://github.com/Codearte/catch-exception
+
+## AssertJ  
+Outside of the basic `Assertions.assertThat(x).isEqualTo(y);` there is:
+
+#### Soft Assertions  
+Used to assert DTOs. With the basic Assertion when the first fails, it stops there and only shows that error. With soft assertions it executes all and shows all where there was an error.
+```
+SoftAssertions.assertSoftly(soft -> {
+    soft.assertThat(dto.getName()).isEqualTo("nme");
+    soft.assertThat(dto.getAge()).isEqualTo(90);
+    soft.assertThat(dto.getRace()).isEqualTo(Race.HUMAN);
+});
+```
+
+#### Assert Collections
+Assertions if the original Beans are accessible to compare against
+```
+// Given
+final TolkienCharacter aragorn = new TolkienCharacter("aragon", 200, Race.HUMAN);
+final TolkienCharacter frodo = new TolkienCharacter("frodo", 30, Race.HOBBIT);
+final TolkienCharacter sam = new TolkienCharacter("sam", 30, Race.HOBBIT);
+final List<TolkienCharacter> fellowship = Lists.newArrayList(aragorn, frodo, sam);
+
+// When
+
+// Then
+Assertions.assertThat(fellowship)
+        .filteredOn(character -> character.getName().contains("a"))
+        .hasSize(2)
+        .containsOnly(aragorn, sam);
+```  
+
+Assertions if the original Beans are not accessible, or it woul be too much work to create them.
+```
+// Given
+final List<TolkienCharacter> fellowship = this.prepareFellowship();
+
+// When
+
+// Then
+Assertions.assertThat(fellowship)
+        .extracting("name", String.class)
+        .contains("aragorn", "frodo", "sam")
+        .doesNotContain("sauron");
+```

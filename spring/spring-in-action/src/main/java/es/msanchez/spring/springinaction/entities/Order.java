@@ -6,9 +6,14 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.sql.Date;
 
 @Data
 public class Order {
+
+  private Long id;
+
+  private Date createdAt;
 
   @NotBlank(message = "name is required")
   private String name;

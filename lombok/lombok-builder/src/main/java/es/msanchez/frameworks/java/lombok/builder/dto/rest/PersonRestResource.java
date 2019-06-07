@@ -10,7 +10,7 @@ public class PersonRestResource {
     @GetMapping("/")
     public PersonDto buildPerson() {
         return PersonDto.builder().age(18).hobby("live")
-                .name("Sergey").id(11235434L).build();
+                .id(11235434L).build();
     }
 
 }

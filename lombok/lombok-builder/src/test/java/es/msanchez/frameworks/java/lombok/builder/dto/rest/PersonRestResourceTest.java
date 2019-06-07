@@ -27,7 +27,7 @@ public class PersonRestResourceTest {
         SoftAssertions.assertSoftly(soft -> {
             soft.assertThat(result.getAge()).isEqualTo(18);
             soft.assertThat(result.getHobbies()).hasSize(1).containsExactly("live");
-            soft.assertThat(result.getName()).isEqualTo("Sergey");
+            soft.assertThat(result.getName()).isNull();
             soft.assertThat(result.getId()).isEqualTo(11235434L);
         });
     }

@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+
+  my-java-app:
+    build:
+      context: ./my-java-app
+      dockerfile: ./DockerFile
+    image: my-java-app
+    container_name: my-java-app
+    ports: 
+      - "80:4001"

@@ -1,5 +1,5 @@
 ##
-# Build Stage
+# Build Stage - This image won't be included in the release image. Only compiles.
 ##
 FROM maven:3.6.1-jdk-8 AS build
 COPY app /usr/src/app

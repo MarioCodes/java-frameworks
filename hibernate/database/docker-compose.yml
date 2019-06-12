@@ -9,7 +9,7 @@ services:
   #    - ./dbcreation.sql:/tmp/dbcreation.sql
   #    - ./import.sh:/tmp/import.sh
     ports:
-      - "3306:3306"
+      - "3310:3306"
     environment:
       MYSQL_DATABASE: "hibernate"
       MYSQL_USER: "hibernate_user"

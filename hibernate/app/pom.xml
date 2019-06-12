@@ -13,6 +13,9 @@
     <maven.shade.version>3.2.1</maven.shade.version>
 
     <!-- Normal Dependency Versions -->
+    <hibernate.core.version>5.4.3.Final</hibernate.core.version>
+    <hibernate.mysql.connector>8.0.16</hibernate.mysql.connector>
+
     <spring.version>5.1.6.RELEASE</spring.version>
     <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
 
@@ -32,6 +35,20 @@
   </properties>
 
   <dependencies>
+
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.core.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${hibernate.mysql.connector}</version>
+    </dependency>
+
 
     <!-- Spring Boot -->
     <dependency>

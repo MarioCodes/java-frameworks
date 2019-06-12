@@ -16,10 +16,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {
-        "es.msanchez.frameworks.java.spring.boot.**"
-})
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = {"es.msanchez.frameworks.java.spring.boot.**"})
 public class DatabaseConfig {
 
     @Bean

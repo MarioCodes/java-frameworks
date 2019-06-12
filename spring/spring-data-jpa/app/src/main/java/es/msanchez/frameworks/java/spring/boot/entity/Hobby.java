@@ -8,12 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
-@Table
 @Data
 @NoArgsConstructor
-public class Hobby {
+@Table(name = "hobby")
+public class Hobby implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

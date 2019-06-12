@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"es.msanchez.frameworks.java.spring.boot.**"})
+@EnableJpaRepositories(basePackages = {"es.msanchez.frameworks.java.spring.boot.dao"})
 public class DatabaseConfig {
 
     @Bean

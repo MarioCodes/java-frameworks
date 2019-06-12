@@ -3,7 +3,9 @@ package es.msanchez.frameworks.java.spring.boot.hibernate;
 import es.msanchez.frameworks.java.spring.boot.entity.Hobby;
 import es.msanchez.frameworks.java.spring.boot.entity.Person;
 import org.hibernate.Session;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,12 +16,12 @@ public class HibernateUtilTest {
 
     private Session session;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         this.session = HibernateUtil.getSESSION_FACTORY().openSession();
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         HibernateUtil.shutdown();
     }

@@ -97,6 +97,7 @@ public class DesignTacoController {
         }
 
         final Taco saved = this.tacoRepository.save(design);
+        order.getTacos().add(saved);
 
         log.info("processing design '{}'", design);
         return "redirect:/orders/current";

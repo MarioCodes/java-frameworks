@@ -2,12 +2,11 @@ package es.msanchez.spring.springinaction.dao;
 
 import es.msanchez.spring.springinaction.entities.Ingredient;
 import es.msanchez.spring.springinaction.entities.Taco;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
@@ -16,6 +15,7 @@ import java.sql.Types;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+@Slf4j
 @Repository
 public class JdbcTacoRepository implements TacoRepository {
 
@@ -41,15 +41,22 @@ public class JdbcTacoRepository implements TacoRepository {
     }
 
     private long saveTacoInfo(final Taco taco) {
-        taco.setCreatedAt(Date.valueOf(LocalDate.now()));
+        final Date now = Date.valueOf(LocalDate.now());
+        log.info("Date timestamp: {}", now);
+        taco.setCreatedAt(now);
         final PreparedStatementCreator psc = new PreparedStatementCreatorFactory(
                 "insert into Taco (name, createdAt) values (?,?)",
                 Types.VARCHAR, Types.TIMESTAMP
         ).newPreparedStatementCreator(Arrays.asList(taco.getName(),
                 new Timestamp(taco.getCreatedAt().getTime())));
+        log.info("PreparedStatement: {}", psc.toString());
 
-        final KeyHolder keyHolder = new GeneratedKeyHolder();
-        this.jdbc.update(psc, keyHolder);
-        return keyHolder.getKey().longValue();
+        final int result = this.jdbc.update(psc);
+        log.info("result from update: {}", result);
+        /*
+         * The original example uses -> return number.longValue(); this comes from a KeyHolder
+         * but the implementation doesnt work as it returns a null.
+         */
+        return result;
     }
 }

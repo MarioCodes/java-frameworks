@@ -49,30 +49,6 @@ public class DesignTacoController {
         return new Taco();
     }
 
-    /**
-     * This is going to be loaded every time we load for "design" view.
-     *
-     * @param model -
-     */
-    @ModelAttribute
-    public void addIngredientsToModel(final Model model) {
-        final List<Ingredient> ingredients = Arrays.asList(
-                new Ingredient("FLTO", "Flour tortilla", Type.WRAP),
-                new Ingredient("COTO", "Corn tortilla", Type.WRAP),
-                new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
-                new Ingredient("CARN", "Carnitas", Type.PROTEIN),
-                new Ingredient("TMTO", "Diced tomatoes", Type.VEGGIES),
-                new Ingredient("LETC", "Lettuce", Type.VEGGIES),
-                new Ingredient("CHED", "Ceddar", Type.CHEESE),
-                new Ingredient("JACK", "Monterrey Jack", Type.CHEESE),
-                new Ingredient("SLSA", "Salsa", Type.SAUCE),
-                new Ingredient("SRCR", "Sour cream", Type.SAUCE));
-
-        for (final Type type : Type.values()) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
-        }
-    }
-
     @GetMapping
     public String showDesignForm(final Model model) {
         final List<Ingredient> ingredients = new ArrayList<>();
@@ -88,16 +64,17 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(@Valid @ModelAttribute("design") final Taco design,
+    public String processDesign(@Valid final Taco design,
                                 final Errors errors,
                                 @ModelAttribute final Order order) {
         if (errors.hasErrors()) {
             log.error("Errors found on processDesign()");
+            errors.getAllErrors().forEach(x -> log.error("{}", x));
             return "design";
         }
 
         final Taco saved = this.tacoRepository.save(design);
-        order.getTacos().add(saved);
+        order.addDesign(saved);
 
         log.info("processing design '{}'", design);
         return "redirect:/orders/current";

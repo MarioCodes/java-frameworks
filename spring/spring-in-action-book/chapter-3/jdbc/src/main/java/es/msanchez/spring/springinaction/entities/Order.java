@@ -44,4 +44,8 @@ public class Order {
 
   private List<Taco> tacos = new ArrayList<>();
 
+  public void addDesign(final Taco design) {
+    this.tacos.add(design);
+  }
+
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
+
 <head>
     <title>Taco Cloud</title>
     <link rel="stylesheet" th:href="@{/styles.css}"/>
@@ -10,11 +11,16 @@
 <h1>Design your Taco!</h1>
 <!-- <img th:src="@{images/taco.png}"/> -->
 
-<form method="POST" th:object="${design}">
+<form method="POST" th:object="${taco}">
 
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ingredients')}">Ingredient Error. Please correct the problems below and resubmit.</span>
+
+    <!-- Old version. Delete when all works together.
     <div th:if="${#fields.hasErrors()}">
         <p class="validationError">Please correct the problems below and resubmit.</p>
     </div>
+    -->
 
     <div class="grid">
 
@@ -70,6 +76,7 @@
 
         <button>Submit your taco</button>
     </div>
+
 </form>
 </body>
 </html>

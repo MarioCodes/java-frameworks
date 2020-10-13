@@ -16,7 +16,7 @@
 
   	<!-- test versions -->
   	<lombok.version>1.16.6</lombok.version>
-  	<junit.version>4.12</junit.version>
+  	<junit.version>4.13.1</junit.version>
   	<assertj.version>3.8.0</assertj.version>
   </properties>
 

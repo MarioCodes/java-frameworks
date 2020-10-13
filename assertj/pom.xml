@@ -27,7 +27,7 @@
         <mockito.version>2.13.0</mockito.version>
         <powermock.version>1.7.3</powermock.version>
         <catch-exception.version>1.4.6</catch-exception.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencies>

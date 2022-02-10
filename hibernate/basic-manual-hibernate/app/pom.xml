@@ -13,7 +13,7 @@
     <maven.shade.version>3.2.1</maven.shade.version>
 
     <!-- Normal Dependency Versions -->
-    <hibernate.core.version>5.4.3.Final</hibernate.core.version>
+    <hibernate.core.version>5.4.24.Final</hibernate.core.version>
     <hibernate.mysql.connector>8.0.16</hibernate.mysql.connector>
 
     <spring.version>5.1.6.RELEASE</spring.version>

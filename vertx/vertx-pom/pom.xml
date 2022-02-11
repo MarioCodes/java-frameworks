@@ -11,7 +11,7 @@
   	<maven.compiler.config.version>1.8</maven.compiler.config.version>
   	
   	<!-- Dependency Versions -->
-  	<vertx.version>3.5.0</vertx.version>
+  	<vertx.version>3.9.4</vertx.version>
   	<vertx.js.version>3.0.0</vertx.js.version>
   	<lombok.version>1.16.18</lombok.version>
   	<slf4j.version>1.7.25</slf4j.version>
